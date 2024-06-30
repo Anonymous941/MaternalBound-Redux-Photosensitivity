@@ -154,7 +154,19 @@ l_0xc9fbc4:
 
 l_0xc9fbf2:
     newline
-    "@To use this, go to a cash machine and insert the card.[03]" eob
+    "Choose an option" newline
+    menu {
+        "Lightning": {
+            "Pause, hold A," newline
+            "then use frame advance repeatedly"
+            next
+            "[1D 05 FF 01][1B 03 {e(data_23.l_0xc684a6)}]"
+            window_closeall
+            music(124)
+            "[1F 15 6A 00 C1 02 01]"
+        }
+    }
+    eob
 
 l_0xc9fc16:
     newline
