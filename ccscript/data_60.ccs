@@ -152,6 +152,37 @@ l_0xc9fbc4:
     "  the [1C 05 00]." next
     "@The enemy may not notice that you are present.[03]" eob
 
+/*
+Patch created using ebsrc:
+
+diff --git a/src/data/events/scripts/705+706_common.asm b/src/data/events/scripts/705+706_common.asm
+index 157a8dfd..d542b9bf 100644
+--- a/src/data/events/scripts/705+706_common.asm
++++ b/src/data/events/scripts/705+706_common.asm
+@@ -2,12 +2,15 @@
+ EVENT_705_706_COMMON:
+        EVENT_LOOP $0B
+                EVENT_SET_VAR ACTIONSCRIPT_VARS::V0, $000A
+-               EVENT_UNKNOWN_C474A8
++               ;EVENT_UNKNOWN_C474A8
+                EVENT_SET_VAR ACTIONSCRIPT_VARS::V0, $0002
+                EVENT_PAUSE 1*FIFTEENTH_OF_A_SECOND
+                EVENT_SET_VAR ACTIONSCRIPT_VARS::V0, $0000
+-               EVENT_UNKNOWN_C474A8
++               ;EVENT_UNKNOWN_C474A8
+                EVENT_SET_VAR ACTIONSCRIPT_VARS::V0, $0002
+                EVENT_PAUSE 1*FIFTEENTH_OF_A_SECOND
+        EVENT_LOOP_END
+        EVENT_END_TASK
++       ; padding so the addresses don't all change
++       .byte $FF, $FF, $FF, $FF
++       .byte $FF, $FF, $FF, $FF
+*/
+
+ROM[0xC38751] = {
+    "[01 0B 0E 00 0A 00 0E 00 02 00 06 04 0E 00 00 00 0E 00 02 00 06 04 02 0C FF FF FF FF FF FF FF]"
+}
+
 l_0xc9fbf2:
     newline
     "Choose an option" newline

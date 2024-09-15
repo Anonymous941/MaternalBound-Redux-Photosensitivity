@@ -1,4 +1,4 @@
-/home/user/Documents/Programming/Misc/MaternalBound-Redux-Photosensitivity/mb-sensitivity-debug.sfc
+/home/user/Documents/Programming/EarthBound/test.sfc
 CCScript Compilation Summary
 ============================
 
